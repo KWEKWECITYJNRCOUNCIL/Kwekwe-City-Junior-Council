@@ -21,6 +21,9 @@ p {
     text-align: center;
     line-height: 1.8;
 }
+h2 {
+    text-align: center;
+}
 /* COLORS */
 :root{
 --primary:#0b3d91;
