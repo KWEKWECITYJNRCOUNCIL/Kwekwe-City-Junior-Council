@@ -17,6 +17,10 @@ body{
     color:#222;
     overflow-x:hidden;
 }
+p {
+    text-align: center;
+    line-height: 1.8;
+}
 /* COLORS */
 :root{
 --primary:#0b3d91;
