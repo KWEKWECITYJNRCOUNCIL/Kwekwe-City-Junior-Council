@@ -5,13 +5,6 @@
 
 /* LOADER */
 
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-
-    setTimeout(() => {
-        
-    }, 700);
-});
 
 /* MOBILE NAVIGATION */
 
