@@ -50,16 +50,24 @@ window.addEventListener("scroll", () => {
 
 const statsSection = document.querySelector(".stats");
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-        }
-    });
-}, {
-    threshold: 0.5
-});
+if (statsSection) {
 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                if (typeof animateCounters === "function") {
+                    animateCounters();
+                }
+
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(statsSection);
+}
 if (statsSection) {
     observer.observe(statsSection);
 }
@@ -120,12 +128,13 @@ backToTop.addEventListener("click", () => {
 
 /* MOBILE NAV CLOSE ON LINK CLICK */
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
+if (navLinks) {
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
     });
-});
-
+}
 /* ACTIVE NAV LINK ON SCROLL */
 
 const navItems = document.querySelectorAll(".nav-links a");
