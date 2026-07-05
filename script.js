@@ -20,19 +20,25 @@ window.addEventListener("load", () => {
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
 /* SMOOTH SCROLL FOR INTERNAL LINKS */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
+       const target = document.querySelector(this.getAttribute("href"));
+
+if (target) {
+    target.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+    });
     });
 });
 
@@ -63,8 +69,9 @@ const observer = new IntersectionObserver(entries => {
     threshold: 0.5
 });
 
-observer.observe(statsSection);
-
+if (statsSection) {
+    observer.observe(statsSection);
+}
 /* SCROLL REVEAL ANIMATION */
 
 const sections = document.querySelectorAll("section");
