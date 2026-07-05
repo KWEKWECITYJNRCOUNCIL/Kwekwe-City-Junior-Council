@@ -9,9 +9,7 @@ window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
     setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-        loader.style.transition = "0.8s ease";
+        
     }, 700);
 });
 
